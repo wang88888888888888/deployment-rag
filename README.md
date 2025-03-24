@@ -1,4 +1,4 @@
-# Alberta Perspectives RAG Challenge
+# Technical Interview - Sample RAG Project
 
 ## Project Context
 
