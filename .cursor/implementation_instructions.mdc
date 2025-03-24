@@ -1,0 +1,63 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Implementation Outline
+
+## Part 1: Setup and Scaffolding
+- Initialize project repositories (frontend and backend, or monorepo)
+- Set up Supabase project and configure tables
+- Create basic API endpoints structure
+- Initialize Next.js/React frontend with basic layout
+
+## Part 2: Document Processing
+- Implement PowerPoint text extraction function
+  - Extract slide titles, content, and notes
+  - Process text formatting if relevant
+  - Extract image captions or alt text if available
+- Create JSON structure to store extracted content
+- Implement simple document metadata extraction
+
+## Part 3: Vector Embeddings and Storage
+- Implement text chunking functionality
+  - Split content into meaningful segments
+  - Maintain reference to source slide/document
+- Create embedding generation function
+  - Connect to embedding API
+  - Generate embeddings for text chunks
+- Store embeddings and text in Supabase
+  - Implement upsert functionality for documents
+  - Create indexing for vector similarity search
+
+## Part 4: RAG Query Pipeline 
+- Create query processing endpoint
+  - Convert user query to embedding
+  - Implement vector similarity search
+  - Retrieve relevant text chunks
+- Implement context assembly
+  - Format retrieved chunks for LLM prompt
+  - Create prompt template with instructions
+- Connect to LLM API
+  - Send assembled context and query
+  - Process and format response
+
+## Part 5: Frontend Interface 
+- Implement chat UI components
+  - Message input field
+  - Chat history display
+  - Loading states and error handling
+- Connect frontend to backend API
+  - Implement query submission
+  - Handle response rendering
+  - Manage chat history state
+
+## Phase 6: Testing and Documentation
+- Explain 
+- Identify limitations and potential improvements
+
+## Stretch Goals (if time permits)
+- Implement basic caching for frequent queries
+- Add simple error recovery mechanisms
+- Create a document upload interface
+- Improve response formatting for different content types

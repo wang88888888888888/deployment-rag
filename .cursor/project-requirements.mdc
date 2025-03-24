@@ -1,0 +1,45 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# RAG Test Project Requirements
+
+## Core Requirements
+
+### Document Processing
+- Process PowerPoint files containing economic research data
+- Extract text content from slides, including titles, bullet points, and paragraphs
+- Handle simple charts and graphs by extracting their titles and descriptions (if provided)
+- Maintain associations between extracted text and its source slides/documents
+
+### Vector Database
+- Generate meaningful vector embeddings for extracted content
+- Design and implement a database schema for storing:
+  - Document metadata (file name, upload date, author, etc.)
+  - Extracted text segments
+  - Vector embeddings
+  - Relationships between text segments and their source materials
+- Implement efficient vector similarity search capabilities
+
+### RAG Implementation
+- Accept natural language queries from users
+- Convert queries to vector embeddings
+- Retrieve relevant content based on vector similarity
+- Format retrieved context for submission to an LLM
+- Generate coherent, context-aware responses using the LLM and retrieved information
+- Implement a fallback mechanism when confidence is low
+
+### User Interface
+- Create a minimal chat interface similar to the reference design (legisimple.ca)
+- Implement an input field for user queries
+- Display chatbot responses with appropriate formatting
+- Show basic attribution to source materials when possible
+
+## Performance Expectations
+- Return query responses within 5 seconds
+- Handle at least 10 concurrent users
+
+## Constraints
+- The prototype must be deployable to Vercel
+- Data must be stored in Supabase (or equivalent during development)

@@ -1,0 +1,23 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Technical Stack Requirements and Recommendations
+
+## Required Technologies
+
+### Frontend
+- **Framework**: Next.js or React
+- **Language**: TypeScript
+- **Frontend Deployment**: Vercel
+
+### Backend
+- **Language**: Python or Node.js
+- **Database**: Your choice (We use Supabase)
+- **Vector Storage**: Your choice 
+- **Backend Deployment**: Your choice
+
+### AI/ML
+- **Embeddings**: Your choice
+- **LLM Integration**: Your choice

@@ -1,0 +1,43 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# Interview Rules and Guidelines
+
+## Time Allocation
+
+- Total time: 180 minutes
+
+## Allowed Resources
+
+- Anything you can find to get the job done! But you must be able to explain how and why it works.
+
+## Prohibited Resources
+
+- Complete project templates or solutions
+- AI assistants for writing complete implementations
+- Consulting with other individuals during the interview
+
+## Submission Requirements
+
+- All code must be pushed to the GitHub repository
+- The repository must include:
+  - Source code for both frontend and backend components
+  - Setup instructions
+  - A brief architecture overview document
+  - Any assumptions or limitations of the implementation
+
+## Evaluation Focus
+
+- Working functionality over perfect code
+- Sound architectural decisions
+- Code quality and organization
+- Error handling and edge cases
+- Communication of technical decisions and trade-offs
+
+## Questions and Clarifications
+
+- You may ask clarifying questions at any time
+- There is no penalty for seeking clarification
+- Some ambiguity is intentional to assess how you handle requirements gathering
