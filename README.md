@@ -101,14 +101,6 @@ You will build a RAG system prototype that demonstrates the core functionality o
    - Setup instructions
    - Discussion of trade-offs and potential improvements
 
-## Tech Stack
-
-Required:
-
-- Backend: Supabase (or others as desired)
-- Frontend: Your choice of modern framework
-- LLM Integration: Your choice (e.g., OpenAI)
-
 ## Rules and Guidelines
 
 - You may use anything that helps you complete the task
@@ -117,5 +109,6 @@ Required:
 - Focus on core functionality first
 - Document any assumptions you make
 - Time management is crucial - prioritize MVP features
+- Do your best. If you don't finish, push the progress that you've made and explain how you would go about completing the project.
 
 Good luck with the challenge! We're excited to see your solution.
