@@ -19,7 +19,8 @@ function App() {
       setAnswer('');
       // Call backend API
       try {
-        const response = await fetch('http://localhost:8001/chat', {
+        const apiUrl = process.env.REACT_APP_API_URL || 'http://localhost:8001';
+        const response = await fetch(`${apiUrl}/chat`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ question }),
