@@ -26,4 +26,9 @@ I need to create the database for the RAG, and therefore, I need to do the three
 # 2 Once the base component and middle component, build a very simple frontend user interface to see if context-aware answers can be generated based on user's input
     2.1 Build a fucnctiong chat entry and test the frontend with npm to make sure that the interface is successfully set up
     2.2 Use flask or flask api to connect the entry in the frontend to LLM
+    2.3 backend is able to be running, so does front end - INFO:     127.0.0.1:51367 - "POST /chat HTTP/1.1" 500 Internal Server Error -> solved as you can see in screenshot
+
+    credt: cursor/ my framework to solve the problem/ structural thinking in troubleshooting with AI help
+
+    https://github.com/wang88888888888888/tech-interview-genai-engineer/tree/jane-feng-submission
 
