@@ -38,3 +38,4 @@ Frontend: http://localhost:3000/
 Backend: http://127.0.0.1:8001/docs
 - command line: uvicorn api.index:app --reload --port 8001
 
+The final deployment Link: https://deployment-rag.vercel.app/
