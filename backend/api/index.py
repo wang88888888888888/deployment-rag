@@ -1,8 +1,7 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from utils.rag_pipeline import answer_query
-import os
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -18,13 +17,22 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 class ChatRequest(BaseModel):
     question: str
+
 
 class ChatResponse(BaseModel):
     answer: str
 
+
 @app.post("/chat", response_model=ChatResponse)
 def chat_endpoint(request: ChatRequest):
     answer = answer_query(request.question)
-    return ChatResponse(answer=answer) 
+    return ChatResponse(answer=answer)
+
+try:
+    from vercel_fastapi import VercelFastAPI
+    app = VercelFastAPI(app)
+except ImportError:
+    pass  # Running locally, so just use FastAPI

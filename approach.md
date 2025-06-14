@@ -32,3 +32,9 @@ I need to create the database for the RAG, and therefore, I need to do the three
 
     https://github.com/wang88888888888888/tech-interview-genai-engineer/tree/jane-feng-submission
 
+
+Frontend: http://localhost:3000/
+- command line: npm start
+Backend: http://127.0.0.1:8001/docs
+- command line: uvicorn api.index:app --reload --port 8001
+
