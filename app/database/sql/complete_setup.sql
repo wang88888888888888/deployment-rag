@@ -36,35 +36,35 @@ WITH (lists = 100);
 ALTER TABLE public.documents ENABLE ROW LEVEL SECURITY;
 ALTER TABLE public.chunks ENABLE ROW LEVEL SECURITY;
 
--- 7. Create security policies
+-- 7. Create security policies that allow inserts from the anon key
 -- For documents table
 DROP POLICY IF EXISTS "Enable read for all users" ON public.documents;
 DROP POLICY IF EXISTS "Enable write for authenticated users" ON public.documents;
+DROP POLICY IF EXISTS "Enable write for all users" ON public.documents;
 
 CREATE POLICY "Enable read for all users" 
 ON public.documents FOR SELECT 
 TO authenticated, anon
 USING (true);
 
-CREATE POLICY "Enable write for authenticated users" 
-ON public.documents FOR ALL 
-TO authenticated
-USING (true)
+CREATE POLICY "Enable write for all users" 
+ON public.documents FOR INSERT
+TO authenticated, anon
 WITH CHECK (true);
 
 -- For chunks table
 DROP POLICY IF EXISTS "Enable read for all users" ON public.chunks;
 DROP POLICY IF EXISTS "Enable write for authenticated users" ON public.chunks;
+DROP POLICY IF EXISTS "Enable write for all users" ON public.chunks;
 
 CREATE POLICY "Enable read for all users" 
 ON public.chunks FOR SELECT 
 TO authenticated, anon
 USING (true);
 
-CREATE POLICY "Enable write for authenticated users" 
-ON public.chunks FOR ALL 
-TO authenticated
-USING (true)
+CREATE POLICY "Enable write for all users" 
+ON public.chunks FOR INSERT
+TO authenticated, anon
 WITH CHECK (true);
 
 -- 8. Create vector similarity search function with improved matching
@@ -104,8 +104,6 @@ $$;
 -- 9. Grant necessary permissions
 GRANT USAGE ON SCHEMA public TO authenticated, anon;
 GRANT USAGE ON SCHEMA extensions TO authenticated, anon;
-GRANT SELECT ON public.documents TO authenticated, anon;
-GRANT SELECT ON public.chunks TO authenticated, anon;
-GRANT ALL ON public.documents TO authenticated;
-GRANT ALL ON public.chunks TO authenticated;
+GRANT ALL ON public.documents TO authenticated, anon;
+GRANT ALL ON public.chunks TO authenticated, anon;
 GRANT EXECUTE ON FUNCTION public.match_chunks(extensions.vector(1536), int, float) TO authenticated, anon; 
